@@ -10,21 +10,31 @@ const title = document.getElementsByClassName("card-title");
 const paragraph = document.getElementsByClassName("card-text");
 
 
+
 // Modify the DOM
-// 
+ 
 
 
 function createNewPost() {
     let newPost = document.createElement('div');
+    let titleOfNewPost = document.createElement("h5");
+    let paragraphOfNewPost = document.createElement("p");
     let titleOfNewPost = document.getElementById('new-post-title');
+    let title = titleOfNewPost.value;
+    titleOfNewPost.innerHTML = title;
+    document.newPost.appendChild(titleOfNewPost);
+    document.getElementById('new-post-title').value = '';
     let paragraphOfNewPost = document.getElementById("new-post-content");
-    titleOfNewPost.textContent = "";
-    paragraphOfNewPost.textContent = "";
     div = document.getElementsById("form-group");
 
     newPost.appendChild(titleOfNewPost);
     newPost.appendChild(paragraphOfNewPost);
     newPost.classList.add('post-items-list');
 }
+
+document.getElementsById('text').addEventListener('click', handler);
+document.getElementsById('new-post-title').addEventListener('click', ($event) => {
+ newPost.textContent = $event.target.value;
+})
 
 
